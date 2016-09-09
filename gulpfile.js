@@ -185,3 +185,5 @@ gulp.task("nehan.min.js", function(){
     .pipe(rename("nehan.min.js"))
     .pipe(gulp.dest("dist/"));
 });
+
+gulp.task('default', ['nehan.js', 'nehan.min.js']);

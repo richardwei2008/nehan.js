@@ -15,8 +15,10 @@ Nehan.Char = (function(){
     "\u3002"
   ];
   var __touten = [
+
     "\u002C",
-    "\u3001"
+    // "\u3001" Richard use Fullwidth Comma 
+    "\uFF0C"
   ];
   var __kakko_start = [
     "\u0028",
@@ -325,7 +327,7 @@ Nehan.Char = (function(){
     css["line-height"] = half_font_size + "px";
     css["font-size"] = half_font_size + "px";
     css["float"] = "left";
-    
+
     return css;
   };
 
@@ -728,7 +730,7 @@ Nehan.Char = (function(){
       break;
     case 8592: // LEFTWARDS ARROW(U+2190)
       this._setVertCnv("&#x2191;", 1, 1); // UPWARDS ARROW(U+2191)
-      break; 
+      break;
     case 45: // HYPHEN-MINUS(U+002D)
       this._setRotate(90);
       this.hscale = 0.4; // generally, narrower than half in horizontal
