@@ -17,8 +17,8 @@ Nehan.Char = (function(){
   var __touten = [
 
     "\u002C",
-    // "\u3001" Richard use Fullwidth Comma 
-    "\uFF0C"
+    // "\u3001" "\uFF0C" Richard use Fullwidth Comma
+    "\u3001"
   ];
   var __kakko_start = [
     "\u0028",
@@ -212,6 +212,8 @@ Nehan.Char = (function(){
       css["margin-bottom"] = "-0.5em";
     } else if(!is_kakko_start && !is_kakko_end && !is_tenten && this.vscale < 1){
       css.height = "0.5em";
+      css.width = "0.7em";
+      css["padding-top"] = "0.2em";
       Nehan.Obj.copy(css, this.getCssPadding(line));
     }
     return css;

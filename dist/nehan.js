@@ -260,7 +260,7 @@ Nehan.Config = {
    @default 0.3
    */
   defaultListSpacingRate:0.3,
-  
+
   /**
    box-flow set for "vert" and "hori".
 
@@ -472,8 +472,8 @@ Nehan.Config = {
       .replace(/\u2019/g, "\u0027")  // RIGHT SINGLE QUOTATION MARK(U+2019) -> APOSTROPHE(U+0027)
       .replace(/\uFF62/g, "\u300C")  // HALFWIDTH LEFT CORNER BRACKET(U+FF62) -> LEFT CORNER BRACKET(U+300C)
       .replace(/\uFF63/g, "\u300D")  // HALFWIDTH RIGHT CORNER BRACKET(U+FF63) -> RIGHT CORNER BRACKET(U+300D)
-      .replace(/\uFF0C/g, "\u3001")  // FULLWIDTH COMMA(U+FF0C) -> IDEOGRAPHIC COMMA(U+3001)
-      .replace(/\uFF64/g, "\u3001")  // HALF SIZE IDEOGRAPHIC COMMA(U+FF64) -> IDEOGRAPHIC COMMA(U+3001)
+      // .replace(/\uFF0C/g, "\u3001")  // FULLWIDTH COMMA(U+FF0C) -> IDEOGRAPHIC COMMA(U+3001)
+      .replace(/\uFF64/g, "\uFF0C")  // HALF SIZE IDEOGRAPHIC COMMA(U+FF64) -> IDEOGRAPHIC COMMA(U+3001)
       .replace(/\uFF61/g, "\u3002")  // HALFWIDTH IDEOGRAPHIC FULL STOP(U+FF61) -> IDEOGRAPHIC FULL STOP(U+3002)
     ;
   }
@@ -8508,8 +8508,8 @@ Nehan.Char = (function(){
   var __touten = [
 
     "\u002C",
-    // "\u3001" Richard use Fullwidth Comma 
-    "\uFF0C"
+    // "\u3001" "\uFF0C" Richard use Fullwidth Comma
+    "\u3001"
   ];
   var __kakko_start = [
     "\u0028",
@@ -8703,6 +8703,8 @@ Nehan.Char = (function(){
       css["margin-bottom"] = "-0.5em";
     } else if(!is_kakko_start && !is_kakko_end && !is_tenten && this.vscale < 1){
       css.height = "0.5em";
+      css.width = "0.7em";
+      css["padding-top"] = "0.2em";
       Nehan.Obj.copy(css, this.getCssPadding(line));
     }
     return css;
